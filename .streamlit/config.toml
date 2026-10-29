@@ -1,0 +1,14 @@
+[server]
+address = "127.0.0.1"
+enableXsrfProtection = true
+enableCORS = true
+maxUploadSize = 5
+enableStaticServing = false
+headless = true
+
+[browser]
+gatherUsageStats = false
+
+[client]
+showErrorDetails = "none"
+toolbarMode = "minimal"

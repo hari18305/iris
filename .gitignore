@@ -1,0 +1,18 @@
+__pycache__/
+*.pyc
+.venv/
+venv/
+.pytest_cache/
+
+# Dataset images are large and licensed; keep only the checked-in samples
+data/raw/*
+!data/raw/.gitkeep
+data/debug/*
+!data/debug/.gitkeep
+data/cache/*
+!data/cache/.gitkeep
+data/store/
+data/store_old*/
+
+# Office temporary lock files
+~$*

@@ -1,0 +1,261 @@
+{
+  "dataset": {
+    "total_images": 2639,
+    "segmented": 2619,
+    "failed_to_acquire": 20,
+    "fta_rate": 0.007578628268283441,
+    "subjects": 249,
+    "eyes": 395,
+    "dev_images": 553,
+    "dev_eyes": 81,
+    "test_images": 2066,
+    "test_eyes": 314,
+    "dev_subjects": "001-060",
+    "test_subjects": "061-249",
+    "image_size": [
+      280,
+      320
+    ]
+  },
+  "dev": {
+    "n_genuine": 2187,
+    "n_impostor": 150441,
+    "genuine_mean": 0.2387848198413849,
+    "genuine_std": 0.06967757642269135,
+    "impostor_mean": 0.47663524746894836,
+    "impostor_std": 0.014328714460134506,
+    "d_prime": 4.7285919189453125,
+    "auc": 0.9933094461770278,
+    "eer": 0.01508906749684048,
+    "eer_threshold": 0.44239999999999996,
+    "far_at_threshold": 0.01106081453858988,
+    "frr_at_threshold": 0.015089163237311385,
+    "threshold": 0.44,
+    "frr_at_far_0.01": 0.015089163237311385,
+    "thr_at_far_0.01": 0.4392785429954529,
+    "frr_at_far_0.001": 0.018747142203932327,
+    "thr_at_far_0.001": 0.42327117919921875,
+    "frr_at_far_0.0001": 0.02606310013717421,
+    "thr_at_far_0.0001": 0.40596675872802734,
+    "eer_threshold_dev": 0.44239999999999996
+  },
+  "test": {
+    "n_genuine": 6632,
+    "n_impostor": 2126513,
+    "genuine_mean": 0.2548511028289795,
+    "genuine_std": 0.07253602892160416,
+    "impostor_mean": 0.4764026701450348,
+    "impostor_std": 0.014531210064888,
+    "d_prime": 4.235373497009277,
+    "auc": 0.993867279148917,
+    "eer": 0.01940385851078335,
+    "eer_threshold": 0.44329999999999997,
+    "far_at_threshold": 0.012638060524436013,
+    "frr_at_threshold": 0.02065741857659831,
+    "threshold": 0.44,
+    "frr_at_far_0.01": 0.0212605548854041,
+    "thr_at_far_0.01": 0.43821772933006287,
+    "frr_at_far_0.001": 0.03000603136308806,
+    "thr_at_far_0.001": 0.42167919874191284,
+    "frr_at_far_0.0001": 0.03875150784077201,
+    "thr_at_far_0.0001": 0.40501487255096436,
+    "rank1_identification": 0.9646118721461188,
+    "id_probes": 1752,
+    "id_gallery": 314
+  },
+  "operating_points": {
+    "Balanced (dev EER point)": {
+      "threshold": 0.44239999999999996,
+      "far": 0.017278050968886623,
+      "frr": 0.019601930036188178
+    },
+    "High security (dev FAR = 0.1%)": {
+      "threshold": 0.42327117919921875,
+      "far": 0.0012649816859807582,
+      "frr": 0.029101326899879373
+    },
+    "Maximum security (dev FAR = 0.01%)": {
+      "threshold": 0.40596675872802734,
+      "far": 0.00011427157981164469,
+      "frr": 0.03814837153196622
+    }
+  },
+  "ablation": {
+    "Full system": {
+      "eer": 0.01940385851078335,
+      "d_prime": 4.235373497009277,
+      "frr_at_far_0.001": 0.03000603136308806,
+      "genuine_mean": 0.2548511028289795,
+      "impostor_mean": 0.4764026701450348
+    },
+    "No rotation compensation (shift = 0 only)": {
+      "eer": 0.07847942528171202,
+      "d_prime": 2.6465508937835693,
+      "frr_at_far_0.001": 0.13118214716525936,
+      "genuine_mean": 0.31156909465789795,
+      "impostor_mean": 0.49782466888427734
+    },
+    "No noise mask (all pixels treated as valid)": {
+      "eer": 0.021235902708101335,
+      "d_prime": 4.060334205627441,
+      "frr_at_far_0.001": 0.029704463208685163,
+      "genuine_mean": 0.26218342781066895,
+      "impostor_mean": 0.4778383672237396
+    },
+    "All radial bands (no inner-band restriction)": {
+      "eer": 0.022104429211859192,
+      "d_prime": 3.9973673820495605,
+      "frr_at_far_0.001": 0.03769601930036188,
+      "genuine_mean": 0.28042706847190857,
+      "impostor_mean": 0.47732555866241455
+    },
+    "No iris-radius prior in segmentation": {
+      "eer": 0.02555660058536158,
+      "d_prime": 4.075766086578369,
+      "frr_at_far_0.001": 0.037846803377563326,
+      "genuine_mean": 0.25667816400527954,
+      "impostor_mean": 0.4764118194580078,
+      "failures": 0
+    }
+  },
+  "robustness": {
+    "None (clean probe)": {
+      "probes": 295,
+      "fta": 0,
+      "frr": 0.021689497716894976,
+      "far": 0.014946750452320705,
+      "genuine_mean": 0.26643088459968567,
+      "impostor_mean": 0.476056843996048,
+      "eer": 0.02108168207831998
+    },
+    "Gaussian noise, sigma = 10": {
+      "probes": 295,
+      "fta": 1,
+      "frr": 0.02688787185354691,
+      "far": 0.010615136067344828,
+      "genuine_mean": 0.297838419675827,
+      "impostor_mean": 0.4768829941749573,
+      "eer": 0.024009857913789297
+    },
+    "Gaussian noise, sigma = 25": {
+      "probes": 295,
+      "fta": 1,
+      "frr": 0.04290617848970252,
+      "far": 0.004184273211731163,
+      "genuine_mean": 0.3601803779602051,
+      "impostor_mean": 0.47868797183036804,
+      "eer": 0.027951481715307355
+    },
+    "Gaussian blur, sigma = 2 px": {
+      "probes": 295,
+      "fta": 3,
+      "frr": 0.020161290322580645,
+      "far": 0.025124575047734365,
+      "genuine_mean": 0.2746601104736328,
+      "impostor_mean": 0.4746907651424408,
+      "eer": 0.020749640369290237
+    },
+    "Gaussian blur, sigma = 4 px": {
+      "probes": 295,
+      "fta": 5,
+      "frr": 0.03021499128413713,
+      "far": 0.04005332181153486,
+      "genuine_mean": 0.31603530049324036,
+      "impostor_mean": 0.47386634349823,
+      "eer": 0.031204463464203403
+    },
+    "Brightness x 0.6": {
+      "probes": 295,
+      "fta": 5,
+      "frr": 0.021449275362318842,
+      "far": 0.014643500104668201,
+      "genuine_mean": 0.26661917567253113,
+      "impostor_mean": 0.476138174533844,
+      "eer": 0.021468619259555927
+    },
+    "Brightness x 1.4": {
+      "probes": 295,
+      "fta": 48,
+      "frr": 0.08741258741258741,
+      "far": 0.04294912754976653,
+      "genuine_mean": 0.32158800959587097,
+      "impostor_mean": 0.472750186920166,
+      "eer": 0.07194517303782481
+    },
+    "Rotation 5 deg": {
+      "probes": 295,
+      "fta": 1,
+      "frr": 0.029748283752860413,
+      "far": 0.014394692762347158,
+      "genuine_mean": 0.2714381515979767,
+      "impostor_mean": 0.47615379095077515,
+      "eer": 0.028467137582076654
+    },
+    "Rotation 10 deg": {
+      "probes": 295,
+      "fta": 2,
+      "frr": 0.13719862227324914,
+      "far": 0.01264041451807798,
+      "genuine_mean": 0.32553741335868835,
+      "impostor_mean": 0.4766520857810974,
+      "eer": 0.10485857396745421
+    },
+    "Rotation 20 deg": {
+      "probes": 295,
+      "fta": 4,
+      "frr": 0.9844200807847663,
+      "far": 0.008566679239362999,
+      "genuine_mean": 0.4912068247795105,
+      "impostor_mean": 0.4778383672237396,
+      "eer": 0.6776975822527563
+    }
+  },
+  "timing_ms": {
+    "segmentation": 13.304299998562783,
+    "normalization": 0.714854002580978,
+    "encoding": 1.0383969981921837,
+    "matching_per_comparison": 0.420586033509628,
+    "enroll_total": 15.057550999335945,
+    "verify_total": 15.478137032845572
+  },
+  "parameters": {
+    "image_size": "320 x 280 (NIR, 8-bit)",
+    "normalized_strip": "64 x 512",
+    "log_gabor_wavelengths": [
+      24.0,
+      48.0
+    ],
+    "log_gabor_sigma_on_f": 0.5,
+    "code_shape": [
+      16,
+      256,
+      4
+    ],
+    "code_bits": 16384,
+    "row_band": [
+      0,
+      12
+    ],
+    "iris_radius_prior_px": [
+      85.0,
+      125.0
+    ],
+    "rotation_shifts": [
+      -6,
+      6
+    ],
+    "shift_degrees": 1.40625,
+    "min_overlap": 0.15,
+    "match_threshold": 0.44
+  },
+  "meta": {
+    "elapsed_s": 369.4449393749237,
+    "example_image": "data/raw/CASIA-Iris-Interval/112/L/S1112L03.jpg",
+    "hardest_images": [
+      "data/raw/CASIA-Iris-Interval/107/L/S1107L04.jpg",
+      "data/raw/CASIA-Iris-Interval/116/R/S1116R01.jpg",
+      "data/raw/CASIA-Iris-Interval/107/L/S1107L01.jpg",
+      "data/raw/CASIA-Iris-Interval/107/L/S1107L07.jpg"
+    ]
+  }
+}
